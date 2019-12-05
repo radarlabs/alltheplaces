@@ -7,11 +7,13 @@ name = "pypi"
 awscli = "*"
 "boto3" = "*"
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 scrapy = "*"
 pygithub = "*"
 python-json-logger = "*"
+scrapinghub = "*"
 
 [requires]
 python_version = "3.7"
