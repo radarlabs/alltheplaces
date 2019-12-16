@@ -53,7 +53,7 @@ const dataStr = `
 $(document).ready(function() {
   $.ajax({
     url:
-      "https://s3.amazonaws.com/com.radar.public.alltheplaces/latest-metadata.json"
+      "/latest-metadata.json"
   }).done(parseMetadata)
 })
 
@@ -85,7 +85,16 @@ function parseMetadata(data) {
         render: d => {
           return $.fn.dataTable.render.moment("Do MMM YYYY")(new Date(d));
         }
-      }
+      },
+      {
+        data: "metadata.scrapystats.downloader/request_count",
+        defaultContent: 0
+      },
+      {
+        data: "metadata.scrapystats.downloader/exception_count",
+        defaultContent: 0
+      },
+
     ],
     columnDefs: [
       {
